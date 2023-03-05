@@ -5,9 +5,9 @@ function id() {
 }
 
 const data = [
-  {id: id(), name: 'Bill Branson', salary: 1000 },
-  {id: id(), name: 'Ted Larson', salary: 1200 },
-  {id: id(), name: 'Sam Jackson', salary: 1400 },
+  {id: id(), name: 'Bill Branson', salary: 1000, increase: true },
+  {id: id(), name: 'Ted Larson', salary: 1200, increase: false  },
+  {id: id(), name: 'Sam Jackson', salary: 1400, increase: false  },
 ]
 
 export default data

@@ -2,9 +2,10 @@
 import React from 'react'
 import './employees-list-item.css'
 
-const EmployeesListItem = ({name, salary}) => {
+const EmployeesListItem = ({name, salary, increase}) => {
+  let classNoIncrease = "list-group-item d-flex justify-content-between"
   return (
-    <li className="list-group-item d-flex justify-content-between">
+    <li className={increase ? classNoIncrease + ' increase' : classNoIncrease }>
       <span className="list-group-item-label">{name}</span>
       <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
       <div className='d-flex justify-content-center align-items-center'>
