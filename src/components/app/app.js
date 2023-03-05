@@ -6,6 +6,8 @@ import SearchPanel from '../search-panel/search-panel'
 import AppFilter from '../app-filter/app-filter'
 import EmployeesList from '../employees-list/employees-list'
 import EmployeesAddForm from '../employees-add-form/employees-add-form'
+import data from '../data/data'
+
 
 const App = () => {
   return (
@@ -15,7 +17,7 @@ const App = () => {
         <SearchPanel/>
         <AppFilter/>
       </div>
-      <EmployeesList/>
+      <EmployeesList data={data}  />
       <EmployeesAddForm/>
 
     </div>

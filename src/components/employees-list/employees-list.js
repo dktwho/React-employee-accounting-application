@@ -3,13 +3,16 @@ import React from 'react'
 import EmployeesListItem from '../employees-list-item/employees-list-item'
 import './employees-list.css'
 
-const EmployeesList = () => {
+const EmployeesList = ({data}) => {
+
+  const result = data.map((elem) => {
+    return <EmployeesListItem name={elem.name} salary={elem.salary}/>
+  })
+
   return (
     <div>
       <ul className='app-list list-group'>
-        <EmployeesListItem name='Bill Branson' salary={1000}/>
-        <EmployeesListItem name='Ted Tedson' salary={1200}/>
-        <EmployeesListItem name='John Johnson' salary={1400}/>
+        {result}
       </ul>
     </div>
   )
