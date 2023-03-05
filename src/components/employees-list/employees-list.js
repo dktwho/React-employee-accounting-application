@@ -7,9 +7,9 @@ const EmployeesList = () => {
   return (
     <div>
       <ul className='app-list list-group'>
-        <EmployeesListItem/>
-        <EmployeesListItem/>
-        <EmployeesListItem/>
+        <EmployeesListItem name='Bill Branson' salary={1000}/>
+        <EmployeesListItem name='Ted Tedson' salary={1200}/>
+        <EmployeesListItem name='John Johnson' salary={1400}/>
       </ul>
     </div>
   )
