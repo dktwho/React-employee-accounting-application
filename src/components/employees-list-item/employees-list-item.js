@@ -2,7 +2,7 @@
 import React from 'react'
 import './employees-list-item.css'
 
-const EmployeesListItem = ({name, salary, increase}) => {
+const EmployeesListItem = ({name, salary, increase, onDelete}) => {
 
   const classNoIncrease = "list-group-item d-flex justify-content-between"
   const classIncrease = "list-group-item d-flex justify-content-between increase"
@@ -18,6 +18,7 @@ const EmployeesListItem = ({name, salary, increase}) => {
           </button>
 
           <button type="button"
+                  onClick={onDelete}
                   className="btn-trash btn-sm ">
               <i className="fas fa-trash"></i>
           </button>

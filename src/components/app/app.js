@@ -22,6 +22,11 @@ const App = () => {
     setList([...list, newItem ])
   }
 
+  const onDelete = (id) => {
+    setList(list.filter((item) => item.id !== id))
+  }
+
+ 
 
 
   return (
@@ -31,7 +36,7 @@ const App = () => {
         <SearchPanel/>
         <AppFilter/>
       </div>
-      <EmployeesList data={list}   />
+      <EmployeesList data={list} onDelete={onDelete}  />
       <EmployeesAddForm data={list} addItem={addItem}/>
 
     </div>
