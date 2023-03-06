@@ -26,6 +26,12 @@ const App = () => {
     setList(list.filter((item) => item.id !== id))
   }
 
+  const toggleIncrease = (id) => {
+    setList(list.map((item) => {
+      return item.id === id ? {...item, increase: !item.increase} : {...item}
+    }))
+  }
+
  
 
 
@@ -36,8 +42,8 @@ const App = () => {
         <SearchPanel/>
         <AppFilter/>
       </div>
-      <EmployeesList data={list} onDelete={onDelete}  />
-      <EmployeesAddForm data={list} addItem={addItem}/>
+      <EmployeesList data={list} onDelete={onDelete} toggleIncrease={toggleIncrease}  />
+      <EmployeesAddForm data={list} addItem={addItem} />
 
     </div>
   )

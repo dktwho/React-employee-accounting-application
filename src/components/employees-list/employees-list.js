@@ -3,7 +3,7 @@ import React from 'react'
 import EmployeesListItem from '../employees-list-item/employees-list-item'
 import './employees-list.css'
 
-const EmployeesList = ({data, onDelete, id}) => {
+const EmployeesList = ({data, onDelete, toggleIncrease}) => {
 
   let elem = data.map((item) => {
     return <EmployeesListItem 
@@ -11,7 +11,8 @@ const EmployeesList = ({data, onDelete, id}) => {
       name={item.name} 
       salary={item.salary} 
       increase={item.increase} 
-      onDelete={(id) => onDelete(item.id)}/>
+      onDelete={() => onDelete(item.id)}
+      toggleIncrease={() => toggleIncrease(item.id)}/>
       // return <EmployeesListItem key={item.id} {...item}/>
   })
 

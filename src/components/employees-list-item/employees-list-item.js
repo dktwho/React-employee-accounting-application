@@ -2,24 +2,26 @@
 import React from 'react'
 import './employees-list-item.css'
 
-const EmployeesListItem = ({name, salary, increase, onDelete}) => {
+const EmployeesListItem = ({name, salary, increase, onDelete, toggleIncrease}) => {
 
   const classNoIncrease = "list-group-item d-flex justify-content-between"
   const classIncrease = "list-group-item d-flex justify-content-between increase"
 
   return (
-    <li className={increase ? classIncrease : classNoIncrease }>
+    <li className={increase ? classIncrease : classNoIncrease } >
       <span className="list-group-item-label">{name}</span>
       <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
       <div className='d-flex justify-content-center align-items-center'>
           <button type="button"
+              onClick={toggleIncrease}
               className="btn-cookie btn-sm "  >
               <i className="fas fa-cookie"></i>
           </button>
 
           <button type="button"
                   onClick={onDelete}
-                  className="btn-trash btn-sm ">
+                  className="btn-trash btn-sm "
+                  >
               <i className="fas fa-trash"></i>
           </button>
           <i className="fas fa-star"></i>

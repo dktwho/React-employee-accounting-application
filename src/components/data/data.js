@@ -5,7 +5,7 @@ function id() {
 }
 
 const data = [
-  {id: id(), name: 'Bill Branson', salary: 1000, increase: true },
+  {id: id(), name: 'Bill Branson', salary: 1000, increase: false },
   {id: id(), name: 'Ted Larson', salary: 1200, increase: false  },
   {id: id(), name: 'Sam Jackson', salary: 1400, increase: false  },
 ]
