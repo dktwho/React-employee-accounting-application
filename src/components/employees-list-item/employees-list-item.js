@@ -2,14 +2,24 @@
 import React from 'react'
 import './employees-list-item.css'
 
-const EmployeesListItem = ({name, salary, increase, onDelete, toggleIncrease}) => {
+const EmployeesListItem = ({name, salary, increase, rise, onDelete, toggleIncrease, toggleRise}) => {
 
-  const classNoIncrease = "list-group-item d-flex justify-content-between"
-  const classIncrease = "list-group-item d-flex justify-content-between increase"
+
+  let classNames = 'list-group-item d-flex justify-content-between'
+  let classNames2 = 'list-group-item-label'
+
+  if(increase) {
+    classNames += ' increase';
+  }
+  
+  if(rise) {
+    classNames += ' like';
+    classNames2 += ' like'
+  }
 
   return (
-    <li className={increase ? classIncrease : classNoIncrease } >
-      <span className="list-group-item-label">{name}</span>
+    <li className={classNames}  >
+      <span className={classNames2} onClick={toggleRise} >{name}</span>
       <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
       <div className='d-flex justify-content-center align-items-center'>
           <button type="button"
