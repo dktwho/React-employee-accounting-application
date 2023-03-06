@@ -17,6 +17,7 @@ const EmployeesListItem = ({name, salary, increase, rise, onDelete, toggleIncrea
     classNames2 += ' like'
   }
 
+  
   return (
     <li className={classNames}  >
       <span className={classNames2} onClick={toggleRise} >{name}</span>
