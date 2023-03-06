@@ -39,17 +39,27 @@ const App = () => {
     }))
   }
 
+  const lengthList = list.length
+  const increaseList = list.filter((item) => item.increase === true).length
+  const riseList = list.filter((item) => item.rise === true).length
+  
+  
+
  
 
 
   return (
     <div className='app'>
-      <AppInfo/>
+      <AppInfo lengthList={lengthList} increaseList={increaseList} riseList={riseList}/>
       <div className="search-panel">
         <SearchPanel/>
         <AppFilter/>
       </div>
-      <EmployeesList data={list} onDelete={onDelete} toggleIncrease={toggleIncrease}  toggleRise={toggleRise} />
+      <EmployeesList 
+        data={list} 
+        onDelete={onDelete} 
+        toggleIncrease={toggleIncrease}  
+        toggleRise={toggleRise} />
       <EmployeesAddForm data={list} addItem={addItem} />
 
     </div>

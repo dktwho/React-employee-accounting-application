@@ -4,7 +4,6 @@ import './employees-list-item.css'
 
 const EmployeesListItem = ({name, salary, increase, rise, onDelete, toggleIncrease, toggleRise}) => {
 
-
   let classNames = 'list-group-item d-flex justify-content-between'
   let classNames2 = 'list-group-item-label'
 
