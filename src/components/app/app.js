@@ -11,6 +11,7 @@ import {data, id} from '../data/data'
 
 const App = () => {
   const [list, setList] = useState(data)
+  const [term, setTerm] = useState('')
 
   const addItem = (name, salary) => {
     const newItem = {
@@ -43,7 +44,20 @@ const App = () => {
   const increaseList = list.filter((item) => item.increase === true).length
   const riseList = list.filter((item) => item.rise === true).length
   
-  
+  const searchEmp = (items, term) => {
+    if(term.length === 0) {
+      return items
+    }
+    return items.filter((item) => {
+      return item.name.indexOf(term) > -1
+    })
+  }
+
+    const visibleList = searchEmp(list, term)
+
+    const updateSearch = (term) => {
+      setTerm(term)
+    }
 
  
 
@@ -52,11 +66,11 @@ const App = () => {
     <div className='app'>
       <AppInfo lengthList={counterEmployees} increaseList={increaseList} riseList={riseList}/>
       <div className="search-panel">
-        <SearchPanel/>
+        <SearchPanel updateSearch={updateSearch} />
         <AppFilter/>
       </div>
       <EmployeesList 
-        data={list} 
+        data={visibleList} 
         onDelete={onDelete} 
         toggleIncrease={toggleIncrease}  
         toggleRise={toggleRise} />
