@@ -10,4 +10,4 @@ const data = [
   {id: id(), name: 'Sam Jackson', salary: 1400, increase: false  },
 ]
 
-export default data
+export { data, id }

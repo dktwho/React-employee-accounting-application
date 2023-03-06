@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './employees-add-form.css'
 
-const EmployeesAddForm = () => {
+
+const EmployeesAddForm = ({ addItem}) => {
+
+  const [name, setName] = useState('')
+  const [salary, setSalary] = useState('')
+
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    addItem(name, salary)
+    setName('')
+    setSalary('')
+  }
+
+
+
   return (
     <div className="app-add-form">
     <h3>Добавьте нового сотрудника</h3>
-      <form
+      <form onSubmit={onSubmit}
           className="add-form d-flex">
           <input type="text"
+              onChange={(e) => setName(e.target.value) }
               className="form-control new-post-label"
               placeholder="Как его зовут?" />
           <input type="number"
+              onChange={(e) => setSalary(e.target.value) }
               className="form-control new-post-label"
               placeholder="З/П в $?" />
 

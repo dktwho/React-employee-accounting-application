@@ -3,14 +3,17 @@ import React from 'react'
 import './employees-list-item.css'
 
 const EmployeesListItem = ({name, salary, increase}) => {
-  let classNoIncrease = "list-group-item d-flex justify-content-between"
+
+  const classNoIncrease = "list-group-item d-flex justify-content-between"
+  const classIncrease = "list-group-item d-flex justify-content-between increase"
+
   return (
-    <li className={increase ? classNoIncrease + ' increase' : classNoIncrease }>
+    <li className={increase ? classIncrease : classNoIncrease }>
       <span className="list-group-item-label">{name}</span>
       <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
       <div className='d-flex justify-content-center align-items-center'>
           <button type="button"
-              className="btn-cookie btn-sm ">
+              className="btn-cookie btn-sm "  >
               <i className="fas fa-cookie"></i>
           </button>
 
