@@ -19,7 +19,7 @@ const App = () => {
       increase: false,
       id: id(),
     }
-    setList([...data, newItem ])
+    setList([...list, newItem ])
   }
 
 

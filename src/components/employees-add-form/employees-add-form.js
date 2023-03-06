@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './employees-add-form.css'
 
 
-const EmployeesAddForm = ({ addItem}) => {
+const EmployeesAddForm = ({ addItem }) => {
 
   const [name, setName] = useState('')
   const [salary, setSalary] = useState('')
@@ -10,7 +10,7 @@ const EmployeesAddForm = ({ addItem}) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    addItem(name, salary)
+    addItem(name, salary);
     setName('')
     setSalary('')
   }
@@ -24,10 +24,12 @@ const EmployeesAddForm = ({ addItem}) => {
           className="add-form d-flex">
           <input type="text"
               onChange={(e) => setName(e.target.value) }
+              value={name}
               className="form-control new-post-label"
               placeholder="Как его зовут?" />
           <input type="number"
               onChange={(e) => setSalary(e.target.value) }
+              value={salary}
               className="form-control new-post-label"
               placeholder="З/П в $?" />
 
