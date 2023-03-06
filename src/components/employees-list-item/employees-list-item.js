@@ -2,6 +2,7 @@
 import React from 'react'
 import './employees-list-item.css'
 
+
 const EmployeesListItem = ({name, salary, increase, rise, onDelete, toggleIncrease, toggleRise}) => {
 
   let classNames = 'list-group-item d-flex justify-content-between'
@@ -19,7 +20,7 @@ const EmployeesListItem = ({name, salary, increase, rise, onDelete, toggleIncrea
   
   return (
     <li className={classNames}  >
-      <span style={{fontSize: 24}} className={classNames2} onClick={toggleRise} >{name}</span>
+      <span style={{fontSize: 26}} className={classNames2} onClick={toggleRise} >{name}</span>
       <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
       <div className='d-flex justify-content-center align-items-center'>
           <button type="button"

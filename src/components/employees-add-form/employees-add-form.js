@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import './employees-add-form.css'
+// import './employees-add-form.css'
+import './employees-add-form.scss'
 
 
 const EmployeesAddForm = ({ addItem }) => {
@@ -17,7 +18,7 @@ const EmployeesAddForm = ({ addItem }) => {
      }
     }
    
-    
+
   return (
     <div className="app-add-form">
     <h3>Добавьте нового сотрудника</h3>
