@@ -18,7 +18,7 @@ const AppFilter = ({filter, onFilterSelect}) => {
       type='button'
       onClick={() => onFilterSelect(name)}
       key={name}>
-        {label}
+          {label}
     </button>
     )
   })
