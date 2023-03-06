@@ -9,16 +9,15 @@ const EmployeesAddForm = ({ addItem }) => {
 
 
   const onSubmit = (e) => {
-    e.preventDefault()
-    addItem(name, salary);
-    setName('')
-    setSalary('')
-  }
-
-
-
-
-
+    if(name.length > 2 && +salary > 0) {
+      e.preventDefault()
+      addItem(name, salary);
+      setName('')
+      setSalary('')
+     }
+    }
+   
+    
   return (
     <div className="app-add-form">
     <h3>Добавьте нового сотрудника</h3>
