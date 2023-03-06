@@ -39,7 +39,7 @@ const App = () => {
     }))
   }
 
-  const lengthList = list.length
+  const counterEmployees = list.length
   const increaseList = list.filter((item) => item.increase === true).length
   const riseList = list.filter((item) => item.rise === true).length
   
@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <div className='app'>
-      <AppInfo lengthList={lengthList} increaseList={increaseList} riseList={riseList}/>
+      <AppInfo lengthList={counterEmployees} increaseList={increaseList} riseList={riseList}/>
       <div className="search-panel">
         <SearchPanel/>
         <AppFilter/>
